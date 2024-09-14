@@ -1,0 +1,15 @@
+{
+	"name": "title",
+	"plugin-id": "Text",
+	"sid": 285886837869883,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "淡入淡出",
+			"sid": 685623518065615
+		}
+	],
+	"effectTypes": []
+}

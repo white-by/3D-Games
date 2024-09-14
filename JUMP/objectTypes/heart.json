@@ -1,0 +1,27 @@
+{
+	"name": "heart",
+	"plugin-id": "TiledBg",
+	"sid": 978149552800602,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "锚点",
+			"sid": 414422839650251
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 20,
+		"height": 17,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 6365524,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

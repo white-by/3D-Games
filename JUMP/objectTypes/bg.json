@@ -1,0 +1,27 @@
+{
+	"name": "bg",
+	"plugin-id": "TiledBg",
+	"sid": 477569698601803,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "bound",
+			"name": "边界约束",
+			"sid": 100926664180442
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 256,
+		"height": 1024,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 990661,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

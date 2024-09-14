@@ -1,0 +1,27 @@
+{
+	"name": "ground_l",
+	"plugin-id": "TiledBg",
+	"sid": 518754723547332,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "实体",
+			"sid": 441975327705416
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 64,
+		"height": 53,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 8674078,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

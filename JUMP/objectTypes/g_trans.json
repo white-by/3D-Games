@@ -1,0 +1,37 @@
+{
+	"name": "g_trans",
+	"plugin-id": "TiledBg",
+	"sid": 284105025531631,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "jumpthru",
+			"name": "跳跃穿透",
+			"sid": 209059497239349
+		},
+		{
+			"behaviorId": "solid",
+			"name": "实体",
+			"sid": 583269189130845
+		}
+	],
+	"effectTypes": [
+		{
+			"effectId": "dodge",
+			"name": "减淡"
+		}
+	],
+	"image": {
+		"width": 50,
+		"height": 50,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 6859956,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"name": "g_danger",
+	"plugin-id": "TiledBg",
+	"sid": 418654141249302,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "实体",
+			"sid": 266558402880924
+		},
+		{
+			"behaviorId": "jumpthru",
+			"name": "跳跃穿透",
+			"sid": 708083681869970
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 64,
+		"height": 59,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 3835654,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

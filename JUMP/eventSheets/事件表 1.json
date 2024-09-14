@@ -1,0 +1,289 @@
+{
+	"name": "事件表 1",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "键盘",
+					"sid": 382963490801987,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "player",
+					"sid": 654998536174816,
+					"parameters": {
+						"state": "mirrored"
+					}
+				}
+			],
+			"sid": 197177382460408
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "键盘",
+					"sid": 273270401686241,
+					"parameters": {
+						"key": 39
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "player",
+					"sid": 831328517113999,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				}
+			],
+			"sid": 452487529271390
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-outside-layout",
+					"objectClass": "player",
+					"sid": 953575836172537
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "player",
+					"sid": 934197113388467,
+					"parameters": {
+						"x": "119.525198",
+						"y": "806.656039"
+					}
+				},
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "player",
+					"sid": 869795762470003,
+					"parameters": {
+						"instance-variable": "hp",
+						"value": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 252327743489586,
+					"parameters": {
+						"seconds": "1.5  "
+					}
+				}
+			],
+			"sid": 416077794065991
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "player",
+					"sid": 210369769858422,
+					"parameters": {
+						"instance-variable": "hp",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 592907840603390,
+					"parameters": {
+						"layout": "end_cg"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "音频",
+					"sid": 715083988252634,
+					"parameters": {
+						"audio-file": "gameover",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 565858828880597
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "player",
+					"sid": 635843051106590,
+					"parameters": {
+						"object": "g_danger"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 643771173176179,
+					"parameters": {
+						"seconds": "1"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "g_danger",
+					"sid": 162161682656599
+				},
+				{
+					"id": "play",
+					"objectClass": "音频",
+					"sid": 125537055202097,
+					"parameters": {
+						"audio-file": "broke",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 388727414760361
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "player",
+					"sid": 249105171007789,
+					"parameters": {
+						"object": "flag"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "音频",
+					"sid": 160202927681541,
+					"parameters": {
+						"audio-file": "flag_[cut_2sec]",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 517763691570064,
+					"parameters": {
+						"seconds": "1"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 537939250094007,
+					"parameters": {
+						"layout": "win_cg"
+					}
+				}
+			],
+			"sid": 165549819596314
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "player",
+					"sid": 854531273406260,
+					"parameters": {
+						"object": "wood"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "音频",
+					"sid": 837152837226611,
+					"parameters": {
+						"audio-file": "send_[cut_1sec]",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 755658688931819,
+					"parameters": {
+						"seconds": "0.3"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "player",
+					"sid": 801235305590268,
+					"parameters": {
+						"x": "60",
+						"y": "430"
+					}
+				}
+			],
+			"sid": 243545135874450
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "键盘",
+					"sid": 373150345961283,
+					"parameters": {
+						"key": 38
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "音频",
+					"sid": 515778298329116,
+					"parameters": {
+						"audio-file": "jump",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 431996732401091
+		}
+	],
+	"sid": 890515832125335
+}

@@ -1,0 +1,30 @@
+{
+	"name": "事件表 2",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "键盘",
+					"sid": 365643059560578,
+					"parameters": {
+						"key": 27
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 755283681348097,
+					"parameters": {
+						"layout": "game"
+					}
+				}
+			],
+			"sid": 973132787700263
+		}
+	],
+	"sid": 281776741289261
+}
