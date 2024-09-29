@@ -1,3 +1,35 @@
+---
+title: hw2_SimpleCalculator
+date: 2024-9-29
+tags: SYSU
+
+
+---
+
+## 介绍
+
+这是一个由 Unity 从制作的，简易计算器。
+
+<!-- more -->
+
+## 视频
+
+演示视频链接 -> [unity作业：简易计算器SimpleCalculator](https://www.bilibili.com/video/BV1Wjx6eyEor/?vd_source=33e6dae72e8734d733f973f5e84004b0)
+
+<div style="text-align: center; margin: 20px 0;">
+  <iframe 
+    src="//player.bilibili.com/player.html?isOutside=true&aid=113218206828649&bvid=BV1Wjx6eyEor&cid=26053511692&p=1"
+    scrolling="no"
+    border="0"
+    frameborder="no"
+    framespacing="0"
+    allowfullscreen="true"
+    style="width: 100%; max-width: 720px; height: 405px;">
+  </iframe>
+</div>
+
+
+
 ## 简答题
 
 **游戏对象（GameObjects） 和 资源（Assets）的区别与联系：**
@@ -95,115 +127,122 @@ public class TableSpawner : MonoBehaviour
 
 1. 运行效果：
 
-<img src="assets/image-20240927133438092.png" alt="image-20240927133438092" style="zoom:80%;" />
+<img src="https://meee.com.tw/9yZcGvk.png" alt="t" style="zoom: 67%;" />
 
 2. 代码实现：
 
-   1. UI
+   1. Model
 
       ```csharp
-       void OnGUI()
-       {
-           // 获取屏幕尺寸
-           float screenWidth = Screen.width;
-           float screenHeight = Screen.height;
-      
-           // 定义每个按钮和显示框的大小
-           float boxWidth = 300f;
-           float boxHeight = 60f;
-           float buttonWidth = 80f;
-           float buttonHeight = 60f;
-           float spacing = 10f;
-      
-           // 居中显示输入和结果框
-           GUI.Box(new Rect((screenWidth - boxWidth) / 2 + 10, screenHeight / 2 - 200, boxWidth - 40, boxHeight), input != "" ? input : result.ToString());
-      
-           // 布局数字按钮
-           for (int i = 1; i <= 9; i++)
-           {
-               float xPos = (screenWidth - (3 * buttonWidth + 2 * spacing)) / 2 + ((i - 1) % 3) * (buttonWidth + spacing);
-               float yPos = screenHeight / 2 - 100 + ((i - 1) / 3) * (buttonHeight + spacing);
-      
-               if (GUI.Button(new Rect(xPos - 10, yPos, buttonWidth, buttonHeight), i.ToString()))
-               {
-                   input += i.ToString();
-               }
-           }
-      
-           // 单独布局 "0" 按钮
-           if (GUI.Button(new Rect((screenWidth - buttonWidth) / 2 - 10, screenHeight / 2 + 110, buttonWidth, buttonHeight), "0"))
-           {
-               input += "0";
-           }
-      
-           // 布局操作符按钮
-           string[] operators = { "+", "-", "*", "/" };
-           for (int i = 0; i < operators.Length; i++)
-           {
-               float xPos = (screenWidth - (3 * buttonWidth + 2 * spacing)) / 2 + 3 * (buttonWidth + spacing);
-               float yPos = screenHeight / 2 - 100 + i * (buttonHeight + spacing);
-      
-               if (GUI.Button(new Rect(xPos, yPos, buttonWidth, buttonHeight), operators[i]))
-               {
-                   SetOperation(operators[i]);
-               }
-           }
-      
-           // 布局 "=" 和 "C" 按钮
-           if (GUI.Button(new Rect((screenWidth - buttonWidth) / 2 + buttonWidth + spacing - 10, screenHeight / 2 + 110, buttonWidth, buttonHeight), "="))
-           {
-               Calculate();
-           }
-           if (GUI.Button(new Rect((screenWidth - buttonWidth) / 2 - buttonWidth - spacing - 10, screenHeight / 2 + 110, buttonWidth, buttonHeight), "C"))
-           {
-               Clear();
-           }
-       }
+      // Entities and their states / Model
+      private string input = ""; // 用户输入
+      private float result = 0;  // 计算结果
+      private string operation = ""; // 当前操作
       
       ```
-
-   2. 计算
-
+   
+   2. System Handlers
+   
       ```csharp
-          // 设置操作符
-          void SetOperation(string op)
+      // System Handlers
+      void OnGUI()
+      {
+          // 获取屏幕尺寸
+          float screenWidth = Screen.width;
+          float screenHeight = Screen.height;
+      
+          // 定义每个按钮和显示框的大小
+          float boxWidth = 300f;
+          float boxHeight = 60f;
+          float buttonWidth = 80f;
+          float buttonHeight = 60f;
+          float spacing = 10f;
+      
+          // 居中显示输入和结果框
+          GUI.Box(new Rect((screenWidth - boxWidth) / 2 + 10, screenHeight / 2 - 200, boxWidth - 40, boxHeight),
+              input != "" ? input : result.ToString());
+      
+          // 布局数字按钮
+          for (int i = 1; i <= 9; i++)
           {
-              if (input != "")
+              float xPos = (screenWidth - (3 * buttonWidth + 2 * spacing)) / 2 + ((i - 1) % 3) * (buttonWidth + spacing);
+              float yPos = screenHeight / 2 - 100 + ((i - 1) / 3) * (buttonHeight + spacing);
+      
+              if (GUI.Button(new Rect(xPos - 10, yPos, buttonWidth, buttonHeight), i.ToString()))
               {
-                  result = float.Parse(input);
-                  input = "";
+                  input += i.ToString();
               }
-              operation = op;
           }
       
-          // 计算结果
-          void Calculate()
+          // 单独布局 "0" 按钮
+          if (GUI.Button(new Rect((screenWidth - buttonWidth) / 2 - 10, screenHeight / 2 + 110, buttonWidth, buttonHeight), "0"))
           {
-              if (input != "")
+              input += "0";
+          }
+      
+          // 布局操作符按钮
+          string[] operators = { "+", "-", "*", "/" };
+          for (int i = 0; i < operators.Length; i++)
+          {
+              float xPos = (screenWidth - (3 * buttonWidth + 2 * spacing)) / 2 + 3 * (buttonWidth + spacing);
+              float yPos = screenHeight / 2 - 100 + i * (buttonHeight + spacing);
+      
+              if (GUI.Button(new Rect(xPos, yPos, buttonWidth, buttonHeight), operators[i]))
               {
-                  float second = float.Parse(input);
-                  switch (operation)
-                  {
-                      case "+": result += second; break;
-                      case "-": result -= second; break;
-                      case "*": result *= second; break;
-                      case "/": result /= second; break;
-                  }
-                  input = "";
-                  operation = "";
+                  SetOperation(operators[i]);
               }
           }
       
-          // 清除输入和结果
-          void Clear()
+          // 布局 "=" 和 "C" 按钮
+          if (GUI.Button(new Rect((screenWidth - buttonWidth) / 2 + buttonWidth + spacing - 10, screenHeight / 2 + 110, buttonWidth, buttonHeight), "="))
           {
+              Calculate();
+          }
+          if (GUI.Button(new Rect((screenWidth - buttonWidth) / 2 - buttonWidth - spacing - 10, screenHeight / 2 + 110, buttonWidth, buttonHeight), "C"))
+          {
+              Clear();
+          }
+      }
+      ```
+   
+   3. Components /controls
+   
+      ```csharp
+      // Components /controls
+      void SetOperation(string op)
+      {
+          if (input != "")
+          {
+              result = float.Parse(input);
               input = "";
-              result = 0;
+          }
+          operation = op;
+      }
+      
+      void Calculate()
+      {
+          if (input != "")
+          {
+              float second = float.Parse(input);
+              switch (operation)
+              {
+                  case "+": result += second; break;
+                  case "-": result -= second; break;
+                  case "*": result *= second; break;
+                  case "/": result /= second; break;
+              }
+              input = "";
               operation = "";
           }
       }
       
+      void Clear()
+      {
+          input = "";
+          result = 0;
+          operation = "";
+      }
       ```
-
+   
       
 
