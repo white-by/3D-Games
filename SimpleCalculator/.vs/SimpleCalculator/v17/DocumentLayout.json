@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Games\\MyGames\\SimpleCalculator\\",
+  "WorkspaceRootPath": "D:\\SYSU\\term3\\3D-Games\\SimpleCalculator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0087D722-05B0-BAF7-4A08-38F5F5603626}|Assembly-CSharp.csproj|D:\\Games\\MyGames\\SimpleCalculator\\assets\\scenes\\simplecalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0087D722-05B0-BAF7-4A08-38F5F5603626}|Assembly-CSharp.csproj|d:\\sysu\\term3\\3d-games\\simplecalculator\\assets\\scenes\\simplecalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0087D722-05B0-BAF7-4A08-38F5F5603626}|Assembly-CSharp.csproj|solutionrelative:assets\\scenes\\simplecalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0087D722-05B0-BAF7-4A08-38F5F5603626}|Assembly-CSharp.csproj|d:\\games\\mygames\\simplecalculator\\assets\\scenes\\chessgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0087D722-05B0-BAF7-4A08-38F5F5603626}|Assembly-CSharp.csproj|D:\\SYSU\\term3\\3D-Games\\SimpleCalculator\\assets\\scenes\\chessgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0087D722-05B0-BAF7-4A08-38F5F5603626}|Assembly-CSharp.csproj|solutionrelative:assets\\scenes\\chessgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -24,11 +24,11 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "ChessGame.cs",
-              "DocumentMoniker": "D:\\Games\\MyGames\\SimpleCalculator\\Assets\\Scenes\\ChessGame.cs",
+              "DocumentMoniker": "D:\\SYSU\\term3\\3D-Games\\SimpleCalculator\\Assets\\Scenes\\ChessGame.cs",
               "RelativeDocumentMoniker": "Assets\\Scenes\\ChessGame.cs",
-              "ToolTip": "D:\\Games\\MyGames\\SimpleCalculator\\Assets\\Scenes\\ChessGame.cs",
+              "ToolTip": "D:\\SYSU\\term3\\3D-Games\\SimpleCalculator\\Assets\\Scenes\\ChessGame.cs",
               "RelativeToolTip": "Assets\\Scenes\\ChessGame.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAYwBYAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwDcAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-27T05:03:52.524Z",
               "EditorCaption": ""
@@ -37,11 +37,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "SimpleCalculator.cs",
-              "DocumentMoniker": "D:\\Games\\MyGames\\SimpleCalculator\\Assets\\Scenes\\SimpleCalculator.cs",
+              "DocumentMoniker": "D:\\SYSU\\term3\\3D-Games\\SimpleCalculator\\Assets\\Scenes\\SimpleCalculator.cs",
               "RelativeDocumentMoniker": "Assets\\Scenes\\SimpleCalculator.cs",
-              "ToolTip": "D:\\Games\\MyGames\\SimpleCalculator\\Assets\\Scenes\\SimpleCalculator.cs",
+              "ToolTip": "D:\\SYSU\\term3\\3D-Games\\SimpleCalculator\\Assets\\Scenes\\SimpleCalculator.cs",
               "RelativeToolTip": "Assets\\Scenes\\SimpleCalculator.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAqwBkAAABgAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAQwGMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-27T05:01:58.428Z",
               "EditorCaption": ""

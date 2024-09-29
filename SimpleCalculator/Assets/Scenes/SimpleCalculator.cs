@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class SimpleCalculator : MonoBehaviour
 {
+
+    // Entities and their states / Model
     private string input = ""; // 用户输入
     private float result = 0;  // 计算结果
     private string operation = ""; // 当前操作
 
-    // 系统更新函数
+    // System Handlers
     void OnGUI()
     {
         // 获取屏幕尺寸
@@ -23,7 +25,8 @@ public class SimpleCalculator : MonoBehaviour
         float spacing = 10f;
 
         // 居中显示输入和结果框
-        GUI.Box(new Rect((screenWidth - boxWidth) / 2 + 10, screenHeight / 2 - 200, boxWidth - 40, boxHeight), input != "" ? input : result.ToString());
+        GUI.Box(new Rect((screenWidth - boxWidth) / 2 + 10, screenHeight / 2 - 200, boxWidth - 40, boxHeight),
+            input != "" ? input : result.ToString());
 
         // 布局数字按钮
         for (int i = 1; i <= 9; i++)
@@ -67,7 +70,7 @@ public class SimpleCalculator : MonoBehaviour
         }
     }
 
-    // 设置操作符
+    // Components /controls
     void SetOperation(string op)
     {
         if (input != "")
@@ -78,7 +81,6 @@ public class SimpleCalculator : MonoBehaviour
         operation = op;
     }
 
-    // 计算结果
     void Calculate()
     {
         if (input != "")
@@ -96,7 +98,6 @@ public class SimpleCalculator : MonoBehaviour
         }
     }
 
-    // 清除输入和结果
     void Clear()
     {
         input = "";
