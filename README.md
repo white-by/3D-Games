@@ -8,4 +8,4 @@
 
 [hw1_JUMP](https://white-by.github.io/2024/09/14/hw1_JUMP/)
 
-hw2_Simple Calculator
+[hw2_SimpleCalculator](https://white-by.github.io/2024/09/29/hw2_SimpleCalculator/#more)
