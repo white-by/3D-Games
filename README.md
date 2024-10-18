@@ -9,3 +9,5 @@
 [hw1_JUMP](https://white-by.github.io/2024/09/14/hw1_JUMP/)
 
 [hw2_SimpleCalculator](https://white-by.github.io/2024/09/29/hw2_SimpleCalculator/#more)
+
+[hw3_PriestsAndDevils](https://white-by.github.io/2024/10/18/hw3_PriestsAndDevils/#more)
