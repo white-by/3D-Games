@@ -11,3 +11,5 @@
 [hw2_SimpleCalculator](https://white-by.github.io/2024/09/29/hw2_SimpleCalculator/#more)
 
 [hw3_PriestsAndDevils](https://white-by.github.io/2024/10/18/hw3_PriestsAndDevils/#more)
+
+[hw4_HitUFO](https://white-by.github.io/2024/11/08/hw4_HitUFO/#more)
