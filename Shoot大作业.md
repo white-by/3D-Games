@@ -14,7 +14,19 @@ tags: SYSU
 
 ## 视频
 
+<div style="text-align: center; margin: 20px 0;">
+  <iframe 
+    src="//player.bilibili.com/player.html?isOutside=true&aid=113565461644649&bvid=BV1FSzzYnEt9&cid=27090617213&p=1"
+    scrolling="no"
+    border="0"
+    frameborder="no"
+    framespacing="0"
+    allowfullscreen="true"
+    style="width: 100%; max-width: 720px; height: 405px;">
+  </iframe>
+</div>
 
+<br/>
 
 ## 得分详解
 
