@@ -13,3 +13,5 @@
 [hw3_PriestsAndDevils](https://white-by.github.io/2024/10/18/hw3_PriestsAndDevils/#more)
 
 [hw4_HitUFO](https://white-by.github.io/2024/11/08/hw4_HitUFO/#more)
+
+[Shoot大作业](https://github.com/white-by/3D-Games/tree/main/Shoot/Shoot大作业.md)
