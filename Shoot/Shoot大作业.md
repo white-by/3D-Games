@@ -14,6 +14,8 @@ tags: SYSU
 
 ## 视频
 
+[演示视频链接](https://www.bilibili.com/video/BV1FSzzYnEt9/?vd_source=33e6dae72e8734d733f973f5e84004b0)
+
 <div style="text-align: center; margin: 20px 0;">
   <iframe 
     src="//player.bilibili.com/player.html?isOutside=true&aid=113565461644649&bvid=BV1FSzzYnEt9&cid=27090617213&p=1"
@@ -148,11 +150,11 @@ tags: SYSU
           //是否可以射箭
           private bool canShoot;
           public FirstController firstController;
-
+      
           void Start(){
               firstController = (FirstController)Director.getInstance().currentSceneController;
           }
-
+      
           public void OnTriggerEnter(Collider collider)
           {
               if (collider.gameObject.tag == "Player")
@@ -173,19 +175,19 @@ tags: SYSU
           }
       }
       ```
-
+    
     - 摄像机（2 分）：使用**多摄像机**，制作 鸟瞰图 或 瞄准镜图 使得游戏更加易于操控；
-
+    
     - 制作了一台俯瞰视角的跟随摄影机，固定在屏幕右上角
-
+    
       ```csharp
       public class UIFollowCamera : MonoBehaviour
       {
           public Camera mainCamera; // 主摄像机
           public Vector3 offset = new Vector3(-0, -0, 0); // RawImage 在屏幕上的偏移量
-
+    
           private RectTransform uiTransform;
-
+    
           void Start()
           {
               // 获取 RawImage 的 RectTransform
@@ -195,7 +197,7 @@ tags: SYSU
                   mainCamera = Camera.main; // 自动获取主摄像机
               }
           }
-
+    
           void Update()
           {
               // 获取主摄像机的屏幕右上角位置
@@ -204,16 +206,16 @@ tags: SYSU
           }
       }
       ```
-
+    
       - 跟随玩家
-
+    
       ```cs
       public class OverheadFollowCamera : MonoBehaviour
       {
           public Transform player; // 玩家对象
           public Vector3 offset = new Vector3(0, 10, -10); // 摄像机相对于玩家的偏移
           public float followSpeed = 5f; // 跟随平滑速度
-
+    
           void LateUpdate()
           {
               if (player == null)
@@ -221,38 +223,38 @@ tags: SYSU
                   Debug.LogWarning("Player 未绑定！");
                   return;
               }
-
+    
               // 计算摄像机目标位置
               Vector3 targetPosition = player.position + offset;
-
+    
               // 平滑移动摄像机
               transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
-
+    
               // 始终让摄像机朝向玩家
               transform.LookAt(player);
           }
       }
       ```
-
+    
     - 声音（2 分）：使用**声音组件**，播放背景音 与 箭射出的声效；
-
+    
     - 有循环的 bgm 以及射击音效
-
+    
       ```csharp
       public class AudioController : MonoBehaviour
       {
           [SerializeField] AudioSource BgmAudio;
           [SerializeField] AudioSource SfxAudio;
-
+    
           public AudioClip bgm;
           public AudioClip shoot;
-
+    
           private void Start()
           {
               BgmAudio.clip = bgm;
               BgmAudio.Play();
           }
-
+    
           public void PlaySfx(AudioClip clip)
           {
               SfxAudio.PlayOneShot(clip);
@@ -277,48 +279,48 @@ tags: SYSU
         public class PlayerController : MonoBehaviour
         {
             private CharacterController cc;
-
+      
             public float moveSpeed = 80.0f;   // 移动速度
             public float jumpSpeed = 20.0f;   // 跳跃初速度
             public float gravity = 20.0f;     // 重力加速度
             public float fallMultiplier = 2.5f; // 加强下落加速度的倍数
-
+      
             private float horizontalMove, verticalMove;
             private Vector3 dir;
             private Vector3 velocity;
-
+      
             public Transform groundCheck;
             public float checkRedius = 0.2f;
             public LayerMask groundLayer;
             public bool isGround;
-
+      
             private void Start()
             {
                 cc = GetComponent<CharacterController>();
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
             }
-
+      
             private void Update()
             {
                 isGround = Physics.CheckSphere(groundCheck.position, checkRedius, groundLayer);
-
+      
                 if (isGround && velocity.y < 0)
                 {
                     velocity.y = -2f;  // 确保贴地
                 }
-
+      
                 horizontalMove = Input.GetAxis("Horizontal") * moveSpeed;
                 verticalMove = Input.GetAxis("Vertical") * moveSpeed;
-
+      
                 dir = transform.forward * verticalMove + transform.right * horizontalMove;
                 cc.Move(dir * Time.deltaTime);
-
+      
                 if (Input.GetKeyDown(KeyCode.Space) && isGround)
                 {
                     velocity.y = jumpSpeed;  // 初始跳跃速度
                 }
-
+      
                 // 重力处理
                 if (velocity.y < 0)
                 {
@@ -328,10 +330,10 @@ tags: SYSU
                 {
                     velocity.y -= gravity * Time.deltaTime;  // 正常的上升重力
                 }
-
+      
                 cc.Move(velocity * Time.deltaTime);
             }
-
+      
             private void OnDrawGizmos()
             {
                 Gizmos.color = Color.red;
@@ -420,20 +422,20 @@ tags: SYSU
           private bool isHolding = false;
           private bool isMouseDown;
           private bool isMouseLongPressed;
-
+      
           private float longPressDuration = 0.2f; // 长按的初始持续时间
           private float maxChargeTime = 1f; // 最大充能时间（1秒）
-
+      
           // 引入 AudioController
           public AudioController audioController;
-
+      
           void Start()
           {
               animator = GetComponent<Animator>();
               firstController = (FirstController)Director.getInstance().currentSceneController;
               audioController = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioController>();
           }
-
+      
           private void Update()
           {
               // 长按左键时逐渐增加力量，直到充满
@@ -441,15 +443,15 @@ tags: SYSU
               {
                   power = Mathf.Min(power + Time.deltaTime / maxChargeTime, 1f); // 限制充能最大值为 1
               }
-
+      
               animator.SetFloat("power", power);
-
+      
               if (firstController.GetArea() && firstController.arrowNum > 0)
               {
                   ClickCheck();
               }
           }
-
+      
           public void ClickCheck()
           {
               // 按下左键
@@ -459,10 +461,10 @@ tags: SYSU
                   {
                       isMouseDown = true;
                       isMouseLongPressed = false;
-
+      
                       // 开始协程检测长按
                       StartCoroutine(CheckLongPress());
-
+      
                       // 触发start
                       animator.SetFloat("power", power);
                       animator.SetTrigger("start");
@@ -475,11 +477,11 @@ tags: SYSU
               else if (isMouseLongPressed && Input.GetMouseButtonDown(1)) // 右键按下
               {
                   isHolding = true;
-
+      
                   // 停止协程
                   StopCoroutine(CheckLongPress());
                   isMouseLongPressed = false;
-
+      
                   animator.SetFloat("hold power", power);
                   animator.SetTrigger("hold");
               }
@@ -487,24 +489,24 @@ tags: SYSU
               else if (isMouseDown && Input.GetMouseButtonUp(0))
               {
                   isMouseDown = false;
-
+      
                   if (!isHolding)
                   {
                       isMouseLongPressed = false;
-
+      
                       // 停止协程
                       StopCoroutine(CheckLongPress());
-
+      
                       // 触发hold
                       animator.SetFloat("hold power", power);
                       animator.SetTrigger("hold");
-
+      
                       // 触发shoot
                       ShootAnimator();
                   }
               }
           }
-
+      
           private IEnumerator CheckLongPress()
           {
               yield return new WaitForSeconds(longPressDuration);
@@ -514,7 +516,7 @@ tags: SYSU
                   isMouseLongPressed = true;
               }
           }
-
+      
           private void ShootAnimator()
           {
               animator.SetTrigger("shoot");
